@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yakesh Associates</title>
+
+<style>
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Times New Roman', Times, serif;
+  background:#000;
+  color:#fff;
+  scroll-behavior:smooth;
+}
+
+/* TOP NAME */
+#topName{
+  position:fixed;
+  top:15px;
+  left:20px;
+  font-size:14px;
+  font-weight:bold;
+  opacity:0;
+  transition:0.4s;
+  z-index:999;
+}
+
+/* HERO */
+#hero{
+  height:100vh;
+  background:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40') no-repeat center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  transition:1s;
+}
+
+#hero h1{
+  font-size:48px;
+  background:rgba(0,0,0,0.5);
+  padding:20px 30px;
+  border-radius:10px;
+  max-width:90%;
+}
+
+/* SERVICES */
+#services{
+  padding:60px 15px;
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s;
+}
+
+#services h2{
+  font-size:30px;
+  margin-bottom:30px;
+}
+
+#services h3{
+  margin-top:25px;
+  font-size:18px;
+}
+
+#services p{
+  margin:6px 0;
+  color:#ccc;
+  font-size:15px;
+}
+
+hr{
+  border:none;
+  border-bottom:1px solid #333;
+  width:60%;
+  margin:20px auto;
+}
+
+/* CONTACT */
+.contact{
+  background:#111;
+  padding:30px 10px;
+  text-align:center;
+}
+
+.contact a{
+  border:1px solid #fff;
+  padding:10px 20px;
+  margin:5px;
+  text-decoration:none;
+  color:#fff;
+  display:inline-block;
+}
+
+/* RESPONSIVE */
+
+/* Tablet */
+@media (max-width:768px){
+  #hero h1{
+    font-size:32px;
+  }
+}
+
+/* Mobile */
+@media (max-width:480px){
+  #hero h1{
+    font-size:24px;
+    padding:15px;
+  }
+
+  #services h2{
+    font-size:22px;
+  }
+
+  #services h3{
+    font-size:16px;
+  }
+
+  #services p{
+    font-size:14px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="topName">Yakesh Associates</div>
+
+<div id="hero">
+  <h1>Yakesh Associates</h1>
+</div>
+
+<div id="services">
+
+<h2>Our Services</h2>
+
+<h3>GST Services</h3>
+<p>GST Registration</p>
+<p>GST Filing</p>
+<p>GST Cancellation</p>
+<p>GST Modification</p>
+<p>GST Annual Return</p>
+<p>GST Notice Handling</p>
+<hr>
+
+<h3>Income Tax</h3>
+<p>Income Tax Filing</p>
+<p>Tax Planning</p>
+<p>Refund Processing</p>
+<p>IT Notice Reply</p>
+<p>TDS Filing</p>
+<hr>
+
+<h3>Business Registration</h3>
+<p>MSME Registration</p>
+<p>Startup Registration</p>
+<p>Partnership Firm</p>
+<p>LLP Registration</p>
+<p>Private Limited Company</p>
+<hr>
+
+<h3>Accounting</h3>
+<p>Book Keeping</p>
+<p>Tally Accounting</p>
+<p>Financial Statements</p>
+<p>Payroll Management</p>
+<p>Accounting Outsourcing</p>
+<hr>
+
+<h3>Audit Services</h3>
+<p>Internal Audit</p>
+<p>Statutory Audit</p>
+<p>Tax Audit</p>
+<p>Compliance Audit</p>
+<hr>
+
+<h3>Company Services</h3>
+<p>ROC Filing</p>
+<p>Annual Compliance</p>
+<p>Director KYC</p>
+<p>Company Closure</p>
+<hr>
+
+<h3>Finance & Loan</h3>
+<p>Project Report</p>
+<p>Bank Loan Assistance</p>
+<p>Financial Planning</p>
+<p>Credit Support</p>
+<hr>
+
+<h3>Digital Services</h3>
+<p>Digital Signature (DSC)</p>
+<p>PAN Services</p>
+<p>TAN Services</p>
+<p>E-Filing Support</p>
+<hr>
+
+<h3>Other Services</h3>
+<p>Trademark Registration</p>
+<p>Import Export Code</p>
+<p>Legal Documentation</p>
+<p>Business License</p>
+<p>Compliance Services</p>
+
+</div>
+
+<div class="contact">
+<p>Contact Us</p>
+<a href="tel:+919443820276">Call</a>
+<a href="https://wa.me/919443820276">WhatsApp</a>
+</div>
+
+<script>
+window.addEventListener('scroll', function(){
+
+let services = document.getElementById('services');
+let topName = document.getElementById('topName');
+let hero = document.getElementById('hero');
+let scroll = window.scrollY;
+
+topName.style.opacity = scroll > 100 ? 1 : 0;
+
+if(services.getBoundingClientRect().top < window.innerHeight - 100){
+  services.style.opacity = 1;
+  services.style.transform = "translateY(0)";
+}
+
+hero.style.transform = "scale(" + (1 + scroll*0.0005) + ")";
+hero.style.filter = "brightness(" + (1 - scroll*0.0005) + ")";
+});
+</script>
+
+</body>
+</html>
